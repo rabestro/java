@@ -30,13 +30,13 @@
 - Inside the lambda, [`DayOfWeek.from()`][dayofweek-from] gives the day of the week of the temporal being adjusted.
 - Adjusters can be chained: the result of applying one adjuster is a temporal you can apply another adjuster to.
 
-[temporaladjusters-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAdjusters.html
-[temporaladjuster-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAdjuster.html
-[localdate-with]: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html#with-java.time.temporal.TemporalAdjuster-
-[localdate-getdayofweek]: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html#getDayOfWeek--
-[dayofweek-from]: https://docs.oracle.com/javase/8/docs/api/java/time/DayOfWeek.html#from-java.time.temporal.TemporalAccessor-
-[dayofweekinmonth-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAdjusters.html#dayOfWeekInMonth-int-java.time.DayOfWeek-
-[lastinmonth-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAdjusters.html#lastInMonth-java.time.DayOfWeek-
-[nextorsame-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAdjusters.html#nextOrSame-java.time.DayOfWeek-
-[lastdayofmonth-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAdjusters.html#lastDayOfMonth--
-[previous-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAdjusters.html#previous-java.time.DayOfWeek-
+[temporaladjusters-docs]: https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/temporal/TemporalAdjusters.html
+[temporaladjuster-docs]: https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/temporal/TemporalAdjuster.html
+[localdate-with]: https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/LocalDate.html#with(java.time.temporal.TemporalAdjuster)
+[localdate-getdayofweek]: https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/LocalDate.html#getDayOfWeek()
+[dayofweek-from]: https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/DayOfWeek.html#from(java.time.temporal.TemporalAccessor)
+[dayofweekinmonth-docs]: https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/temporal/TemporalAdjusters.html#dayOfWeekInMonth(int,java.time.DayOfWeek)
+[lastinmonth-docs]: https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/temporal/TemporalAdjusters.html#lastInMonth(java.time.DayOfWeek)
+[nextorsame-docs]: https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/temporal/TemporalAdjusters.html#nextOrSame(java.time.DayOfWeek)
+[lastdayofmonth-docs]: https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/temporal/TemporalAdjusters.html#lastDayOfMonth()
+[previous-docs]: https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/temporal/TemporalAdjusters.html#previous(java.time.DayOfWeek)

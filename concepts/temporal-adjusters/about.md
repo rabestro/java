@@ -2,11 +2,14 @@
 
 While the core `java.time` classes like `LocalDate` and `LocalDateTime` provide basic methods for adding or subtracting time units, more complex date adjustments often require more sophisticated logic (e.g., finding the "second Tuesday of the month" or the "last day of the year").
 
-The `java.time.temporal` package provides the [`TemporalAdjuster`][temporaladjuster-docs] functional interface for this purpose. It represents a strategy for adjusting a temporal object (like a `LocalDate`). The [`TemporalAdjusters`][temporaladjusters-docs] (note the plural 's') utility class contains static factory methods providing many common, predefined adjuster implementations.
+The `java.time.temporal` package provides the [`TemporalAdjuster`][temporaladjuster-docs] functional interface for this purpose.
+It represents a strategy for adjusting a temporal object (like a `LocalDate`).
+The [`TemporalAdjusters`][temporaladjusters-docs] (note the plural 's') utility class contains static factory methods providing many common, predefined adjuster implementations.
 
 ## Using TemporalAdjusters
 
-Temporal objects like `LocalDate` and `LocalDateTime` have a `with()` method that accepts a `TemporalAdjuster`. This method returns a *new* temporal object with the adjustment applied.
+Temporal objects like `LocalDate` and `LocalDateTime` have a `with()` method that accepts a `TemporalAdjuster`.
+This method returns a *new* temporal object with the adjustment applied.
 
 ```exercism/note
 Using `with(TemporalAdjuster)` returns a _new_ instance and does not update the existing instance, as all `java.time` temporal classes are immutable.
@@ -30,7 +33,8 @@ LocalDate nextSunday = date.with(TemporalAdjusters.next(DayOfWeek.SUNDAY));
 
 ## Common Predefined Adjusters
 
-The `TemporalAdjusters` class provides many useful static methods. Here are some common examples:
+The `TemporalAdjusters` class provides many useful static methods.
+Here are some common examples:
 
 ### Finding Ordinal Day of Week
 
@@ -108,11 +112,10 @@ LocalDate previousMonday = thursday.with(TemporalAdjusters.previous(DayOfWeek.MO
 // => 2024-08-12
 ```
 
-The `nextOrSame()` adjuster is particularly useful for finding dates in ranges like the "teenth" days (13th-19th) of a month, as seen in the Meetup exercise. Applying `nextOrSame(targetDayOfWeek)` to the 13th day of the month will find the correct "teenth" date.
-
 ## Custom Adjusters
 
-Since `TemporalAdjuster` is a [`@FunctionalInterface`][functionalinterface-docs], you can create your own custom adjusters using lambda expressions for logic not covered by the predefined methods. The interface requires implementing a single method: `Temporal adjustInto(Temporal temporal)`.
+Since `TemporalAdjuster` is a [`@FunctionalInterface`][functionalinterface-docs], you can create your own custom adjusters using lambda expressions for logic not covered by the predefined methods.
+The interface requires implementing a single method: `Temporal adjustInto(Temporal temporal)`.
 
 ```java
 // Example: An adjuster that finds the next workday (Mon-Fri), skipping weekends.
@@ -135,6 +138,6 @@ LocalDate nextWorkdayFromSunday = sunday.with(nextWorkday);
 
 While custom adjusters are powerful, the predefined adjusters in the `TemporalAdjusters` class cover a wide range of common use cases.
 
-[temporaladjuster-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAdjuster.html
-[temporaladjusters-docs]: https://docs.oracle.com/javase/8/docs/api/java/time/temporal/TemporalAdjusters.html
-[functionalinterface-docs]: https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html
+[temporaladjuster-docs]: https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/temporal/TemporalAdjuster.html
+[temporaladjusters-docs]: https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/temporal/TemporalAdjusters.html
+[functionalinterface-docs]: https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/FunctionalInterface.html
